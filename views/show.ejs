@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="ui main container text segment">
+  <div class="ui huge header"><%= blog.title %></div>
+</div>
+<div class="ui main container text segment">
+  <img src="<%= blog.image %>" class="ui fluid image" />
+  <div> <%- blog.content %> </div>
+  <div> <%= blog.date.toDateString() %> </div>
+  <a href="/blogs/">
+    <div class="ui animated button" tabindex="0">
+      <div class="visible content">Back</div>
+      <div class="hidden content">
+        <i class="left arrow icon"></i>
+      </div>
+    </div>
+  </a>
+  <a href="/blogs/<%= blog._id %>/edit">
+    <div class="ui right floated vertical animated button" tabindex="0">
+      <div class="hidden content">Edit</div>
+      <div class="visible content">
+        <i class="edit outline icon"></i>
+      </div>
+    </div>
+  </a>
+</div>

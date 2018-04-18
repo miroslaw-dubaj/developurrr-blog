@@ -1,0 +1,38 @@
+<% include ./partials/header %>
+
+<div class="ui main container text segment">
+  <div class="ui huge header">Edit blog entry!</div>
+  <form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method="post">
+    <div class="field">
+      <label>Blog title</label>
+      <input type="text" name="blog[title]" placeholder="Write title here" value="<%= blog.title %>"/>
+    </div>
+    <div class="field">
+      <label>Image url</label>
+      <input type="url" name="blog[image]" placeholder="Add image url adress" value="<%= blog.image %>"/>
+    </div>
+    <div class="field">
+      <label>Update post content - You can use html tags</label>
+      <textarea type="text" name="blog[content]" placeholder="Let's go bananas"><%= blog.content %></textarea>
+    </div>
+    <button class="positive ui button" type="submit">Submit</button>
+    <a href="/blogs/<%= blog._id %>">
+      <div class="ui animated button" tabindex="0">
+        <div class="visible content">Back</div>
+        <div class="hidden content">
+          <i class="left arrow icon"></i>
+        </div>
+      </div>
+    </a>
+    </form>
+    <div class="ui horizontal divider">
+    Or
+    </div>
+    <form action="/blogs/<%= blog._id %>/?_method=DELETE" method="POST">
+      <button class="negative ui animated fade button"  type="submit" tabindex="0">
+        <div class="visible content">Remove</div>
+        <div class="hidden content">DELETE</div>
+      </button>
+    </form>
+</div>
+            

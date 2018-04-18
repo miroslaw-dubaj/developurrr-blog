@@ -1,0 +1,19 @@
+body {
+  background-color: #E0E1E2;
+}
+
+.container.main:first-of-type {
+  margin-top: 5em;
+}
+
+nav.ui.menu {
+  font-size: 1.5em;
+}
+
+textarea {
+  resize: none;
+}
+
+div.ui.main.container.text.segment > div.field:last-of-type {
+  margin-bottom: 5em;
+}

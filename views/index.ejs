@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+
+<div class="ui main container text segment">
+  <div class="ui huge header">Dev Blog</div>
+</div>
+<% blogs.forEach((blog) => { %>
+<div class="ui main container text segment">
+  <img src="<%= blog.image %>" class="ui fluid image" />
+  <div> <%= blog.title %> </div>
+  <div class="desctrip"><%- blog.content.substring(0, 180) %>... <br /> [ <%= (((blog.content.length - 180) > 0) ? (blog.content.length - 180) : ( 0 )) %> characters more ]</div>
+  <div> <%= blog.date.toDateString() %> </div>
+  <a href="/blogs/<%= blog._id %>">
+    <div class="ui animated button" tabindex="0">
+      <div class="visible content">Read more</div>
+      <div class="hidden content">
+        <i class="right arrow icon"></i>
+      </div>
+    </div>
+  </a>
+</div>
+<% }) %>
