@@ -14,6 +14,7 @@ mongoose.connect('mongodb://localhost/developurr', (err) => {
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 
 const blogSchema = new mongoose.Schema({
